@@ -48,6 +48,7 @@ import com.sun.source.tree.ProvidesTree;
 import com.sun.source.tree.RequiresTree;
 import com.sun.source.tree.ReturnTree;
 import com.sun.source.tree.SwitchTree;
+import com.sun.source.tree.SwitchExpressionTree;
 import com.sun.source.tree.SynchronizedTree;
 import com.sun.source.tree.ThrowTree;
 import com.sun.source.tree.Tree;
@@ -368,6 +369,13 @@ public abstract class TreeScannerWithDefaults extends TreeScanner<Void, Void> {
     defaultAction(tree);
     return super.visitSwitch(tree, p);
   }
+
+  @Override
+  public Void visitSwitchExpression(SwitchExpressionTree tree, Void p) {
+    defaultAction(tree);
+    return super.visitSwitchExpression(tree, p);
+  }
+
 
   @Override
   public Void visitSynchronized(SynchronizedTree tree, Void p) {

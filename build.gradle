@@ -198,24 +198,24 @@ allprojects {
             // Uncomment when needed.
             // // Put source files in deterministic order, for debugging.
             // compilationTask.source = compilationTask.source.sort()
-            sourceCompatibility = 8
-            targetCompatibility = 8
+            sourceCompatibility = 17
+            targetCompatibility = 17
             // Because the target is 8, all of the public compiler classes are accessible, so
             // --add-exports are not required, (nor are they allowed with target 8). See
             // https://openjdk.java.net/jeps/247 for details on compiling for older versions.
 
             // When sourceCompatibilty is changed to 11, then the following will be required.
-            // options.compilerArgs += [
-            // "--add-exports", "jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
-            // "--add-exports", "jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
-            // "--add-exports", "jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED",
-            // "--add-exports", "jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED",
-            // "--add-exports", "jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",
-            // "--add-exports", "jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED",
-            // "--add-exports", "jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED",
-            // "--add-exports", "jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
-            // "--add-exports", "jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
-            // ]
+             options.compilerArgs += [
+             "--add-exports", "jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
+             "--add-exports", "jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+             "--add-exports", "jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED",
+             "--add-exports", "jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED",
+             "--add-exports", "jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",
+             "--add-exports", "jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED",
+             "--add-exports", "jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED",
+             "--add-exports", "jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+             "--add-exports", "jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
+             ]
             // This is equivalent to writing "exports jdk.compiler/... to ALL-UNNAMED" in the
             // module-info.java of jdk.compiler, so corresponding --add-opens are only required for
             // reflective access to private members.
