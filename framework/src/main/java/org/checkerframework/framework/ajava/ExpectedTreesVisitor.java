@@ -19,7 +19,6 @@ import com.sun.source.tree.NewArrayTree;
 import com.sun.source.tree.NewClassTree;
 import com.sun.source.tree.StatementTree;
 import com.sun.source.tree.SwitchTree;
-import com.sun.source.tree.SwitchExpressionTree;
 import com.sun.source.tree.SynchronizedTree;
 import com.sun.source.tree.Tree;
 import com.sun.source.tree.VariableTree;
@@ -199,14 +198,6 @@ public class ExpectedTreesVisitor extends TreeScannerWithDefaults {
   @Override
   public Void visitSwitch(SwitchTree tree, Void p) {
     super.visitSwitch(tree, p);
-    // javac surrounds switch expression in a ParenthesizedTree but JavaParser does not.
-    trees.remove(tree.getExpression());
-    return null;
-  }
-
-  @Override
-  public Void visitSwitchExpression(SwitchExpressionTree tree, Void p) {
-    super.visitSwitchExpression(tree, p);
     // javac surrounds switch expression in a ParenthesizedTree but JavaParser does not.
     trees.remove(tree.getExpression());
     return null;

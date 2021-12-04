@@ -663,12 +663,6 @@ public class NullnessVisitor
   }
 
   @Override
-  public Void visitSwitchExpression(SwitchExpressionTree node, Void p) {
-    checkForNullability(node.getExpression(), SWITCHING_NULLABLE);
-    return super.visitSwitchExpression(node, p);
-  }
-
-  @Override
   public Void visitForLoop(ForLoopTree node, Void p) {
     if (node.getCondition() != null) {
       // Condition is null e.g. in "for (;;) {...}"

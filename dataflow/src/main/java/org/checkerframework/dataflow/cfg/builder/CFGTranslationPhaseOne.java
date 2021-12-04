@@ -2029,11 +2029,6 @@ public class CFGTranslationPhaseOne extends TreePathScanner<Node, Void> {
     return null;
   }
 
-  @Override
-  public Node visitSwitchExpression(SwitchExpressionTree tree, Void p) {
-    return null;
-  }
-
   /**
    * Helper class for handling switch statements, including all their substatements such as case
    * labels.
